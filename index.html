@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <header>
+            <h2>To-do List</h2>
+        </header>
+        <form>
+            <!-- <p>{{currentTask}}</p> -->
+            <div id="currentTask">
+                <input type="text" v-model="currentTask" placeholder="Nova tarefa" maxlength="500">
+                <button class="btn" @click.prevent="addTask">+</button>
+            </div>
+        </form>
+        <section>
+            <ol>
+                <li v-for="(task, index) in tasks" @click="toggleTask(task)" class="task">
+                    <div>
+                        <input type="checkbox" :checked="task.done">
+                        <label>
+                            <del v-if="task.done">
+                                {{ task.text }}
+                            </del>
+                            <span v-else>
+                                {{ task.text }}
+                            </span>
+                        </label>
+                    </div>
+                    <img src="close-icon.png" @click="delTask(index)">
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="todo.js"></script>
+</body>
+</html>

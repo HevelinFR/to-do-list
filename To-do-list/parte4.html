@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List Vue.js</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header>
+        <h2>To-do List v.0.4</h2>
+      </header>
+      <form>
+        <!-- <p>{{currentTask}}</p> -->
+        <div id="currentTask">
+          <input
+            type="text"
+            v-model="currentTask"
+            placeholder="Nova tarefa"
+            maxlength="500"
+          />
+          <button class="btn" @click.prevent="addTask">+</button>
+        </div>
+      </form>
+      <section>
+        <ol>
+          <li
+            v-for="(task, index) in tasks"
+            @click="toggleTask(task)"
+            class="task"
+          >
+            <div>
+              <input type="checkbox" :checked="task.done" />
+              <label>
+                <del v-if="task.done">
+                  {{ task.text }}
+                </del>
+                <span v-else>
+                  {{ task.text }}
+                </span>
+              </label>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main>
+      <!-- Não faz parte -->
+    <a href="parte5.html">Proximo</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          currentTask: "",
+          tasks: [
+            {
+              text: "Estudar para prova de web",
+              done: false
+            }
+          ]
+        },
+        methods: {
+          addTask() {
+            this.tasks.push({
+              text: this.currentTask,
+              done: false
+            });
+            this.currentTask = "";
+          },
+          toggleTask(task) {
+            task.done = !task.done;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
