@@ -7,35 +7,20 @@
     <title>To-do List Vue.js</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+</style>
 <body>
     <main id="app">
         <header>
-            <h2>To-do List</h2>
+            <h2>Como criar uma To-do List com Vue.js?</h2>
+            
         </header>
-        <form>
-            <!-- <p>{{currentTask}}</p> -->
-            <div id="currentTask">
-                <input type="text" v-model="currentTask" placeholder="Nova tarefa" maxlength="500">
-                <button class="btn" @click.prevent="addTask">+</button>
-            </div>
-        </form>
         <section>
-            <ol>
-                <li v-for="(task, index) in tasks" @click="toggleTask(task)" class="task">
-                    <div>
-                        <input type="checkbox" :checked="task.done">
-                        <label>
-                            <del v-if="task.done">
-                                {{ task.text }}
-                            </del>
-                            <span v-else>
-                                {{ task.text }}
-                            </span>
-                        </label>
-                    </div>
-                    <img src="close-icon.png" @click="delTask(index)">
-                </li>
-            </ol>
+            <p>Baixe os arquivos abaixo para iniciar o projeto</p>
+            <iframe name="iframe_download" style="display: none;"></iframe>
+            <a href="To-do-list.rar" target="iframe_download">Clique para baixar</a><br>
+            <h2>O que iremos fazer?</h2>
+            <a href="To-do-list/parte5.html">Ver</a>
         </section>
     </main>
 

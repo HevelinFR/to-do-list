@@ -12,59 +12,11 @@ header {
   max-width: 765px;
   margin: 0 auto;
 }
-#currentTask {
-  display: flex;
-  justify-content: space-between;
-}
-#currentTask input[type="text"] {
-  padding: 7px;
-  border-radius: 8px;
-  border: 1px solid #d8bfd8;
-  width: 85%;
-  outline: none;
-}
 
-#currentTask input:focus {
-  border-color: #ad75ad;
-}
-
-#currentTask button {
-  padding: 7px 12px;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #ad75ad;
+a {
+  text-decoration: none;
   color: white;
-}
-ol li {
-  list-style: none;
-}
-ol li:nth-of-type(2n - 1) {
-  background-color: #d8bfd8;
-}
-.task {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 13px;
-  justify-content: space-between;
-
-  background-color: white;
-  width: 100%;
-  padding: 10px;
+  background-color: #ad75ad;
+  padding: 8px;
   border-radius: 8px;
-}
-.task div {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 13px;
-}
-.task span,
-.task del {
-  word-break: break-word;
-}
-img {
-  cursor: pointer;
 }
